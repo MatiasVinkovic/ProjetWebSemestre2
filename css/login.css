@@ -1,0 +1,65 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+/* titre */
+.titre-principal{
+    text-align:center;
+    margin-top: 2rem;
+    font-size: 44px;
+}
+
+/* partie connexion a un compte existant */
+
+.form-login{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+input{
+    font-size: 25px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+input[type="text"]{
+    font-size:1px;
+}
+
+label{
+    font-size: 20px;
+    text-align: left;
+}
+
+input::placeholder {
+    font-size: 1rem; /* Ajustez cette valeur selon vos besoins */
+    color: #888; /* Optionnel : changer la couleur du placeholder */
+    
+}
+
+/* gestion du bouton submit pour le rendre interactif */
+.submit-btn {
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.submit-btn:active {
+    background-color: #004494;
+    transform: scale(0.95);
+}
