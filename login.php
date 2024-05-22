@@ -52,8 +52,9 @@
     <button type="submit" class="submit-btn">Soumettre</button>
     
     <?php
-    
-    
+    if (!empty($_SESSION['erreur-login-message'])) {
+        echo '<p style="color:red;">' . $_SESSION['erreur-login-message'] . '</p>';
+    }
     
     ?>
 </form>

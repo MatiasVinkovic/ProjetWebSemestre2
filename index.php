@@ -33,34 +33,50 @@
     </style>
 </head>
 <body>
+
+<!-- On a la liste -->
+<?php include_once(__DIR__ . '/conseilArray.php'); ?>
+
+<!-- <?php include_once(__DIR__ . '/php_script/test.php');?> -->
+
     <header>
     
-        <?php require_once(__DIR__ . '/header.php');?>
+        <?php require_once(__DIR__ . '/header.php');
+        $nombre_conseil = count($conseils_array);
+        ?>
+        
 
     </header>
 
-    <?php include_once('php_script/existeClient.php'); ?>
+    
 
     <main>
+        
         <div class="container">
             <section class="search-bar">
                 <input type="text" placeholder="Rechercher des conseils...">
                 <button>Rechercher</button>
             </section>
+            
 
             <section class="advice-list">
-                <h2>Conseils Populaires</h2>
-                <div class="advice-item">
-                    <h3>Conseil 1</h3>
-                    <p>Résumé du conseil 1...</p>
+                <h2>Les 3 derniers conseils</h2>
+                <div class="advice-item">               
+                                                        <!-- ne marche pas ???? -->
+
+                    <h3><?php echo "{$conseils_array[$nombre_conseil-1]['titre']}"; ?></h3>
+                    
+                    <p><?php echo "{$conseils_array[$nombre_conseil-1]['resume']}"; ?></p>
                 </div>
                 <div class="advice-item">
-                    <h3>Conseil 2</h3>
-                    <p>Résumé du conseil 2...</p>
+                <h3><?php echo "{$conseils_array[$nombre_conseil-2]['titre']}"; ?></h3>
+                    
+                    <p><?php echo "{$conseils_array[$nombre_conseil-2]['resume']}"; ?></p>
                 </div>
                 <div class="advice-item">
-                    <h3>Conseil 3</h3>
-                    <p>Résumé du conseil 3...</p>
+                <h3><?php echo "{$conseils_array[$nombre_conseil-3]['titre']}"; ?></h3>
+                    
+                    <p><?php echo "{$conseils_array[$nombre_conseil-3]['resume']}"; ?></p>
                 </div>
             </section>
         </div>

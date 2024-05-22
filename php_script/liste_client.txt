@@ -2,3 +2,5 @@ Doe;John;john.doe@example.com;test
 Smith;Jane;jane.smith@example.com;test
 Brown;Charlie;charlie.brown@example.com;test
 Vinkovic;Matias;mativink@gmail.com;matias2004
+Premoli;Clément;premoliclement21@gmail.com;jesucematias
+Boullier;Roman;boullier.roman@gmail.com;jesuceclementetmatias

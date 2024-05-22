@@ -19,7 +19,7 @@ if (file_exists($filename)) {
         // passer ca en tableau
         $parts = explode(';', $line);
 
-        // si la ligne qu'on a a bien 3 parties, alors on les met dans un tableau asso
+        // si la ligne qu'on a a bien 4 parties, alors on les met dans un tableau asso
         if (count($parts) === 4) {
             // Ajouter les données dans un tableau associatif
             $clients_array[] = [

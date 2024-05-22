@@ -15,7 +15,7 @@
             <nav>
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="#">Conseils</a></li>
+                    <li><a href="page_conseil.php">Conseils</a></li>
                     <li><a href="#">Soumettre un Conseil</a></li>
                     <li><a href="logged_out.php">Se déconnecter</a></li>
                     <li><a href="mon_compte.php">Mon compte</a></li>
@@ -28,7 +28,7 @@
             <nav>
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="#">Conseils</a></li>
+                    <li><a href="page_conseil.php">Conseils</a></li>
                     <li><a href="login.php">Se connecter</a></li>
                 </ul>
             </nav>

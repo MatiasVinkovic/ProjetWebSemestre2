@@ -42,6 +42,6 @@
 <h3>mail : <?php echo $_SESSION['LOGGED_USER_mail']; ?></h3> <br>
 
 
-    
+    <?php require_once(__DIR__ . '../footer.php'); ?>
 </body>
 </html>

@@ -10,6 +10,7 @@ $post_data = $_POST;
 
 if(isset($post_data['email-login']) && isset($post_data['password-login'])){ //ligne ok
     // echo $clients_array[3]['password'];
+    $user_found = false;
     foreach($clients_array as $client){
         //echo $clients_array[3]['password'];
         if($client['mail'] === $post_data['email-login'] && $client['password'] === $post_data['password-login']){
@@ -19,10 +20,18 @@ if(isset($post_data['email-login']) && isset($post_data['password-login'])){ //l
             $_SESSION['LOGGED_USER_last_name'] = $client['nom'];
             $_SESSION['LOGGED_USER_first_name'] = $client['prenom'];
             $_SESSION['LOGGED_USER_mail'] = $client['mail'];
-            return;
+            $user_found = true;
+            header("Location: ../index.php");
+            
+            break;
         }
     }
+    if (!$user_found) {
+        $_SESSION['erreur-login-message'] = 'Nom d\'utilisateur ou mot de passe incorrect';
+        header("Location: ../login.php");
+    }
 }
+
 ?>
 
 
@@ -38,11 +47,7 @@ if(isset($post_data['email-login']) && isset($post_data['password-login'])){ //l
 <body>
 
 <?php
-if(!isset($_SESSION['LOGGED_USER'])){
-    echo "mauvais mot de passe ou login";
-    header("Location: ../login.php");
-    exit();
-}
+
 
 ?>
     
