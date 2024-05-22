@@ -13,7 +13,7 @@ $nombre_page = ceil($nombre_conseil / 4);
 
 // Initialiser la variable 'a' si elle n'existe pas
 if (!isset($_SESSION['a'])) {
-    $_SESSION['a'] = 0;
+    $_SESSION['a'] = 1;
 }
 
 // Incrémenter la variable 'a' si le bouton est cliqué

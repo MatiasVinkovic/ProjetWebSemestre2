@@ -54,8 +54,10 @@
         
         <div class="container">
             <section class="search-bar">
-                <input type="text" placeholder="Rechercher des conseils...">
-                <button>Rechercher</button>
+                <form action="page_recherche.php" method="POST">
+                    <input type="text" placeholder="Rechercher des conseils..." name="terme-recherche">
+                    <button type="submit">Rechercher</button>
+                </form>
             </section>
             
 
