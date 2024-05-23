@@ -47,6 +47,14 @@ include_once(__DIR__ . '/conseilArray.php');
 
 
 
+//cette ligne est la plus importante de ce code: 
+// en effet, apres la premiere recherche ,la premiere page s'affiche
+// mais quand on veut aller a la page suivante, le mot recherche n'est pas garder
+// en memoire, et donc le tableau est vide, et il y a erreur
+// on a donc du faire un algo de verification pour savoir si oui ou non on devait
+// ecraser le terme de recherche
+// si le POST est vide, alors on ecrase pas la variable de session
+// si il n'est pas vide, on a fait une nouvelle recherche, et donc on ecrase
 if(empty($_POST['terme-recherche'])){
     $_SESSION['terme-recherche-session'] = $_SESSION['terme-recherche-session'];
 }
@@ -138,7 +146,7 @@ if(isset($_POST['decrement_r'])){
                     ?>   
 
                 <h3><?php echo "{$new_tab[$indice_2]['titre']}"; ?></h3>
-                <p><?php echo "{$new_tab[$indice_1]['resume']}"; ?></p>
+                <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
                     
                 </div>
                  

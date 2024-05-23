@@ -2,6 +2,8 @@
 
 <?php
 
+ini_set('display_errors', 1);
+
 //on a le tableau de la liste des clients enregistrés
 require_once(__DIR__ . '/clientArray.php');
 
@@ -20,6 +22,7 @@ if(isset($post_data['email-login']) && isset($post_data['password-login'])){ //l
             $_SESSION['LOGGED_USER_last_name'] = $client['nom'];
             $_SESSION['LOGGED_USER_first_name'] = $client['prenom'];
             $_SESSION['LOGGED_USER_mail'] = $client['mail'];
+            $_SESSION['LOGGED_USER_password'] = $client['password'];
             $user_found = true;
             header("Location: ../index.php");
             

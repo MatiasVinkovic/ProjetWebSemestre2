@@ -1,0 +1,45 @@
+<?php
+
+session_start();
+
+$modified_lastname = $_POST['modified-lastname'];
+$modified_firstname = $_POST['modified-firstname'];
+$modified_mail = $_POST['modified-mail'];
+$modified_password = $_POST['modified-password'];
+
+
+// echo $modified_lastname;
+// echo $modified_firstname;
+// echo $modified_mail; 
+// echo $modified_password;
+
+// Ouvrir le fichier en lecture et écriture
+$filename = 'liste_client.txt';
+$file = fopen($filename,'r');
+
+// Parcourir les lignes
+while (($line = fgets($file)) !== false) {
+    // Supprimer les sauts de ligne de la ligne courante
+    $line = trim($line);
+
+    // passer cela en tableau
+    $parts = explode(';', $line);
+    
+
+    // Vérifier si les champs correspondent aux valeurs de session
+    if ($parts[0] == $_SESSION['LOGGED_USER_last_name']) {
+        // Modifier la ligne avec les nouvelles valeurs
+        echo "trouvé";
+        //$line = "{$modified_lastname};{$modified_firstname};{$modified_mail};{$modified_password}";
+    }
+    else{
+        echo "pas trouvé ";
+    }
+
+}
+
+fclose($file);
+
+file_put_contents($file, implode("", $lines));
+
+?>

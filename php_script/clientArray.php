@@ -14,10 +14,9 @@ if (file_exists($filename)) {
     // pn lit toutes les lignes du fichier
     while (($line = fgets($file)) !== false) {
         // on enleve les espaces
-        $line = trim($line);
-
+        $new_line = preg_replace('/\s+/', '', $line);
         // passer ca en tableau
-        $parts = explode(';', $line);
+        $parts = explode(';', $new_line);
 
         // si la ligne qu'on a a bien 4 parties, alors on les met dans un tableau asso
         if (count($parts) === 4) {

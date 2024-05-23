@@ -41,7 +41,15 @@
 <h3>Prénom : <?php echo $_SESSION['LOGGED_USER_first_name']; ?></h3> <br>
 <h3>mail : <?php echo $_SESSION['LOGGED_USER_mail']; ?></h3> <br>
 
+<a href="page_modifier_info.php">modifier mes informations</a>
 
-    <?php require_once(__DIR__ . '../footer.php'); ?>
+
+<?php require_once(__DIR__ . '../footer.php'); ?>
+
+
+<!-- possibilite de modifier ses informations -->
+
+
+
 </body>
 </html>

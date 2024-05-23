@@ -6,11 +6,36 @@
     font-family: 'Montserrat';
 }
 
+.container1{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    /* on regle la position */
+    /* position: absolute; */
+    
+    transform: translate(-50%, -50%);
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10   px;
+}
+
+
 /* titre */
 .titre-principal{
     text-align:center;
-    margin-top: 2rem;
+    
     font-size: 44px;
+
 }
 
 /* partie connexion a un compte existant */
@@ -25,6 +50,7 @@ input{
     margin-bottom: 1rem;
     border-radius: 5px;
     box-shadow: none;
+    
 }
 
 input[type="text"]{
@@ -62,4 +88,42 @@ input::placeholder {
 .submit-btn:active {
     background-color: #004494;
     transform: scale(0.95);
+}
+
+
+
+/* partie du bouton creation de compte */
+.bouton-create-account {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+.bouton-create-account:hover {
+    background-color: #45a049;
+}
+
+.principal-div{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.container1, .container2 {
+    flex: 2; /* Partager l'espace disponible */
+    margin: 10px; /* Ajouter une marge entre les divs */
+}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
