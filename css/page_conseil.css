@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.advice-list{
+    margin-left: 2rem;
+}
+
+.bouton-voir-plus {
+    padding: 0.5rem 0.5rem;
+    margin-left: 2rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+ 
+}
+
+.advice-item{
+    display: flex;
+    flex-direction: row;
+}
+
+.bouton-voir-plus:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.bouton-voir-plus:active {
+    background-color: #004494;
+    transform: scale(0.95);
+}

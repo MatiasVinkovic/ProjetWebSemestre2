@@ -53,7 +53,7 @@
     <main>
         
         <div class="container">
-            <section class="search-bar">
+            <section class="search-bar">    
                 <form action="page_recherche.php" method="POST">
                     <input type="text" placeholder="Rechercher des conseils..." name="terme-recherche">
                     <button type="submit">Rechercher</button>
@@ -62,7 +62,7 @@
             
 
             <section class="advice-list">
-                <h2>Les 3 derniers conseils</h2>
+                <h2>Les conseils les plus récents !</h2>
                 <div class="advice-item">               
                                                         <!-- ne marche pas ???? -->
 
@@ -92,5 +92,8 @@
             <p>&copy; 2024 Plateforme de Partage de Conseils. Tous droits réservés à nous et même pas à vous</p>
         </div>
     </footer>
+
+    <img src="" alt="">
+    <h1></h1>
 </body>
 </html>

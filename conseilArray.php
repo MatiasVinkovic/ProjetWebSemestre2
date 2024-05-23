@@ -4,7 +4,6 @@
 
 // Nom du fichier
 $filename = 'liste_conseil.txt';
-$variable = "ouoiuoouououo";
 
 // Vérifier si le fichier existe
 if (file_exists($filename)) {
@@ -15,19 +14,21 @@ if (file_exists($filename)) {
     // on lit toutes les lignes du fichier
     while (($line_c = fgets($file)) !== false) {
         // on enleve les espaces
-        $line_c = trim($line_c);
+        //$line_c = trim($line_c);
 
         // passer ca en tableau : parts_clients
         $parts_c = explode(';', $line_c);
 
         // si la ligne qu'on a a bien 4 parties, alors on les met dans un tableau asso
-        if (count($parts_c) === 4) {
+        if (count($parts_c) === 5) {
             // Ajouter les données dans un tableau associatif
             $conseils_array[] = [
                 'titre' => $parts_c[0],
                 'categorie' => $parts_c[1],
                 'resume' => $parts_c[2],
                 'auteur' => $parts_c[3],
+                'id' => $parts_c[4],
+
             ];
         }
     }
@@ -35,7 +36,7 @@ if (file_exists($filename)) {
     // // Fermer le fichier
     fclose($file);
 
-    // // Afficher le tableau associatif
+    // //Afficher le tableau associatif
     // echo '<pre>';
     // print_r($conseils_array);
     // echo '</pre>';
