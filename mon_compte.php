@@ -42,6 +42,7 @@
 <h3>mail : <?php echo $_SESSION['LOGGED_USER_mail']; ?></h3> <br>
 
 <a href="page_modifier_info.php">modifier mes informations</a>
+<a href="manage_conseil.php">mes conseils</a>
 
 
 <?php require_once(__DIR__ . '../footer.php'); ?>

@@ -3,3 +3,13 @@
  Manger sainement sans se ruiner; Cuisine; Des astuces pour cuisiner des repas équilibrés et savoureux sans dépasser votre budget. Apprenez à faire des choix alimentaires intelligents, à planifier vos repas et à cuisiner des plats délicieux avec des ingrédients accessibles et économiques.; Sophie Leclerc; 3
  Réussir sa carrière professionnelle; Développement personnel; Des conseils pratiques pour progresser dans votre carrière et atteindre vos objectifs professionnels. Découvrez comment améliorer vos compétences, bâtir un réseau solide et naviguer dans le monde du travail avec confiance et détermination.; Marie Dupont; 4
  Les bases du jardinage; Loisirs; Un guide pour débutants pour apprendre les rudiments du jardinage et cultiver vos propres plantes. De la préparation du sol à la plantation, en passant par l'entretien et la récolte, ce livre vous offre toutes les clés pour réussir votre potager ou jardin d'agrément.; Alice Dupont; 5
+ TUTORIEL; COMMENT; Destechniquessimplespourmieuxgérervotretempsetaccomplirvostâchesplusefficacement.; Matias; 6
+ Bien Manger pour Mieux Vivre; Bien-être; L'importance d'une alimentation équilibrée et des astuces pour intégrer de bonnes habitudes alimentaires.; Matias; 7
+ none; none; none; none; none
+ Comment faire un gateau; Cuisine; TUTORIEL COMMENT FAIRE UN GATEAU; Matias; 9
+ comment faire de l'intégration; Développementpersonnel; ceci est un tuto assez sympa; Clément; 10
+ Améliorer sa Forme Physique; Bien-être; Conseils pour intégrer des exercices physiques dans votre routine quotidienne pour une meilleure santé.; Clément; 11
+ Idées de Loisirs Créatifs ;Loisirs; Des suggestions pour des projets créatifs et amusants à réaliser pendant votre temps libre.; Matias; 
+ Comment faire de l'algèbre; developpement personnel; ceci est un tuto pour faire de l'algebre; Clément; 14
+ Idées de Loisirs Créatifs ;Loisirs; Des suggestions pour des projets créatifs et amusants à réaliser pendant votre temps libre.; Matias; 
+ Idées de Loisirs Créatifs ;Loisirs; Des suggestions pour des projets créatifs et amusants à réaliser pendant votre temps libre.; Matias;
