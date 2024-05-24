@@ -11,7 +11,7 @@
         <?php require_once(__DIR__ . '/header.php') ?>
     </header>
     <h1>Formulaire de Conseil</h1>
-    <form action="/php_script/post_in_file_conseil.php" method="post">
+    <form action="/php_script/post_in_file_conseil.php" method="post" enctype="multipart/form-data">
         <!-- Titre -->
         <div>
             <label for="titre">Titre:</label>
@@ -22,8 +22,8 @@
         <div>
             <label for="categorie">Catégorie:</label>
             <select id="categorie" name="new-categorie" required>
-                <option value="developpement_personnel">Développement personnel</option>
-                <option value="bien_etre">Bien-être</option>
+                <option value="developpement-personnel">Développement personnel</option>
+                <option value="bien-etre">Bien-être</option>
                 <option value="cuisine">Cuisine</option>
                 <option value="loisirs">Loisirs</option>
             </select>
@@ -41,14 +41,16 @@
             <input type="text" name="new-auteur" required>
         </div>
         <br>
+        <!-- Fichier -->
+        <div>
+            <label for="fichier">Ajouter un fichier:</label>
+            <input type="file" id="fichier" name="file-to-upload" accept=" .jpg">
+        </div>
+        <br>
         <!-- Bouton de soumission -->
         <div>
             <input type="submit" value="Soumettre">
         </div>
     </form>
-</body>
-</html>
-
-    
 </body>
 </html>

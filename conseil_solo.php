@@ -3,6 +3,10 @@
 $conseil_title = $_POST['info-tab1-title'];
 $conseil_resume= $_POST['info-tab1-resume'];
 $conseil_auteur = $_POST['info-tab1-auteur'];
+$tmp = trim($_POST['info-tab1-image'], " ");
+$conseil_image = "/php_script" . "/" . $tmp;
+
+
 
 ?>
 
@@ -19,6 +23,8 @@ $conseil_auteur = $_POST['info-tab1-auteur'];
     <p>écrit par <b><?php echo $conseil_auteur ?></b></p>
     <h3>Résumé du conseil : </h3>
     <h3><?php echo $conseil_resume ?></h3>
+    
+    <img src="<?php echo $conseil_image ?>" alt="">
 
 
 

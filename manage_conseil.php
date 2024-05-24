@@ -68,10 +68,25 @@ if(isset($_POST['decrement_r'])){
     }
 }
 
+// Temps actuel
+$current_time = time();
+
+// Durée de la session en secondes
+$session_duration = $current_time - $_SESSION['start_time'];
+
+// Convertir la durée en heures, minutes et secondes
+$hours = floor($session_duration / 3600);
+$minutes = floor(($session_duration % 3600) / 60);
+$seconds = $session_duration % 60;
+
+// Afficher la durée de la session
 ?>
+
 
 <section class="advice-list">
                 <h2>les conseils de <?php echo $_SESSION['LOGGED_USER_first_name'] ;?> :  </h2>
+                <h3>Statistique : Vous avez publié <?php echo $nombre_conseil ?> conseils</h3>
+                <h3>vous êtes connecté sur le site depuis : <?php echo "La session est active depuis : {$minutes} minutes et {$seconds} secondes."; ?></h3>
                 <div class="advice-item">   
                     <?php $indice_1 = calculer_indice_recherche($_SESSION['c'], 0);?>
                     <?php //echo "indice 1 vaut {$indice_1}" ?>            
@@ -79,6 +94,7 @@ if(isset($_POST['decrement_r'])){
                     <form method="post" action="modifier_un_conseil.php" target="_blank">
                         <input type="hidden" name="manage1-conseil-titre" value="<?php echo $new_tab[$indice_1]['titre']?>">
                         <input type="hidden" name="manage1-conseil-resume" value="<?php echo $new_tab[$indice_1]['resume']?>">
+                        <input type="hidden" name="manage1-conseil-image" value="<?php echo $new_tab[$indice_1]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Modifier</button>
                     </form>
                     <p><?php echo "{$new_tab[$indice_1]['resume']}"; ?></p>
@@ -91,6 +107,12 @@ if(isset($_POST['decrement_r'])){
                     ?>   
 
                 <h3><?php echo "{$new_tab[$indice_2]['titre']}"; ?></h3>
+                <form method="post" action="modifier_un_conseil.php" target="_blank">
+                        <input type="hidden" name="manage1-conseil-titre" value="<?php echo $new_tab[$indice_2]['titre']?>">
+                        <input type="hidden" name="manage1-conseil-resume" value="<?php echo $new_tab[$indice_2]['resume']?>">
+                        <input type="hidden" name="manage1-conseil-image" value="<?php echo $new_tab[$indice_2]['image']?>">
+                        <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Modifier</button>
+                    </form>
                 <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
                     
                 </div>

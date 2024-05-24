@@ -27,7 +27,7 @@ if (file_exists($filename)) {
                 'categorie' => $parts_c[1],
                 'resume' => $parts_c[2],
                 'auteur' => $parts_c[3],
-                'id' => $parts_c[4],
+                'image' => $parts_c[4],
 
             ];
         }

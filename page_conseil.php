@@ -93,6 +93,7 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-title" value="<?php echo $conseils_array[$indice_1]['titre']?>">
                         <input type="hidden" name="info-tab1-resume" value="<?php echo $conseils_array[$indice_1]['resume']?>">
                         <input type="hidden" name="info-tab1-auteur" value="<?php echo $conseils_array[$indice_1]['auteur']?>">
+                        <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_1]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
                     </div>
@@ -107,6 +108,7 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-title" value="<?php echo $conseils_array[$indice_2]['titre']?>">
                         <input type="hidden" name="info-tab1-resume" value="<?php echo $conseils_array[$indice_2]['resume']?>">
                         <input type="hidden" name="info-tab1-auteur" value="<?php echo $conseils_array[$indice_2]['auteur']?>">
+                        <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_2]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
                     </div>
@@ -121,6 +123,7 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-title" value="<?php echo $conseils_array[$indice_3]['titre']?>">
                         <input type="hidden" name="info-tab1-resume" value="<?php echo $conseils_array[$indice_3]['resume']?>">
                         <input type="hidden" name="info-tab1-auteur" value="<?php echo $conseils_array[$indice_3]['auteur']?>">
+                        <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_3]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
                     </div>
@@ -135,6 +138,7 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-title" value="<?php echo $conseils_array[$indice_4]['titre']?>">
                         <input type="hidden" name="info-tab1-resume" value="<?php echo $conseils_array[$indice_4]['resume']?>">
                         <input type="hidden" name="info-tab1-auteur" value="<?php echo $conseils_array[$indice_4]['auteur']?>">
+                        <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_4]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
                     </div>

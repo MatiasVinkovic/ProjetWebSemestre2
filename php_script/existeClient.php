@@ -23,6 +23,11 @@ if(isset($post_data['email-login']) && isset($post_data['password-login'])){ //l
             $_SESSION['LOGGED_USER_first_name'] = $client['prenom'];
             $_SESSION['LOGGED_USER_mail'] = $client['mail'];
             $_SESSION['LOGGED_USER_password'] = $client['password'];
+            // Vérifier si le temps de démarrage de la session est déjà défini
+            if (!isset($_SESSION['start_time'])) {
+                // Définir le temps de démarrage de la session en secondes depuis l'époque Unix
+                $_SESSION['start_time'] = time();
+            }
             $user_found = true;
             header("Location: ../index.php");
             
