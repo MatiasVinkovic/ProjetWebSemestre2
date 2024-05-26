@@ -8,8 +8,7 @@
 
     <style>
         /* importation des polices */
-        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+        
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
         /* personnalisation de la scroll bar */
@@ -80,10 +79,10 @@ if(isset($_POST['decrement'])){
 
  
 ?>
+<h1 id="h1-main">Tous nos conseils</h1>
 
-
-<section class="advice-list">
-                <h2>Les conseils</h2>
+<section class="advice-container">
+                
                 <div class="advice-item">   
                     <?php
                     $indice_1 = calculer_indice($_SESSION['a'], 0);
@@ -96,8 +95,8 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_1]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
-                    </div>
-                        <p><?php echo "{$conseils_array[$indice_1]['resume']}"; ?></p>
+                    <p><?php echo "{$conseils_array[$indice_1]['resume']}"; ?></p>
+                </div>
                 
                 <div class="advice-item">
                     <?php
@@ -111,8 +110,9 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_2]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
-                    </div>
                     <p><?php echo "{$conseils_array[$indice_2]['resume']}"; ?></p>
+
+                    </div>
                 
                 <div class="advice-item">
                     <?php
@@ -126,8 +126,9 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_3]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
+                    <p><?php echo "{$conseils_array[$indice_3]['resume']}"; ?></p>
+
                     </div>
-                <p><?php echo "{$conseils_array[$indice_3]['resume']}"; ?></p>
                 
                 <div class="advice-item">
                     <?php
@@ -141,22 +142,32 @@ if(isset($_POST['decrement'])){
                         <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_4]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
                     </form>
-                    </div>
                     <p><?php echo "{$conseils_array[$indice_4]['resume']}"; ?></p>
-                
 
-                <h1>Valeur de a : <?php echo $_SESSION['a']; ?></h1>
-
-                <form method="post">
-                    <button type="submit" name="increment">Incrémenter</button>
-                </form>
-
-                <form method="post">
-                    <button type="submit" name="decrement">Décrémenter</button>
-                </form>
-                <form method="post">
-                    <a href="index.php">RETOUR A L'ACCUEIL</a>
-                </form>
-
-                
+                    </div>
+        
 </section>
+
+        <h3 class="a-value">Page <?php echo " {$_SESSION['a']} / {$nombre_page}" ; ?></h3>
+
+            
+                <div id="button-down-page">
+                    <form method="post">
+                        <button type="submit" name="decrement" class="button_r btn-right" >Page précedente</button>
+                    </form>
+                
+                        <form method="post" >
+                            <button type="submit" name="increment" class="button_r btn-left">Page suivante</button>
+                        </form>
+                </div>
+                
+
+                <div class="bouton-retour-div">
+                    <form method="post">
+                        <a href="index.php" class="bouton-retour">Retour à l'accueil</a>
+                    </form>
+                </div>
+
+                    
+                </form>
+          

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/page_conseil.css">
     <title>Document</title>
 </head>
 <style>
@@ -91,14 +91,22 @@ foreach ($conseils_array as $conseil) {
 <?php require_once(__DIR__ . '/fonctions.php');
 
 
-$nombre_conseil_new_tab = count($new_tab);
-// echo $nombre_conseil_new_tab;
-$nombre_page = ceil($nombre_conseil_new_tab / 2);
 
-//echo $nombre_page;
+
+
 
 $nombre_conseil = count($new_tab);
-$nombre_page = ceil($nombre_conseil / 2);
+
+echo $nombre_conseil/4;
+if($nombre_conseil/4 <= 1.0){
+    $nombre_page = 1;
+    echo "a";
+}
+elseif($nombre_conseil/4 > 1){
+    $nombre_page = ceil($nombre_conseil/4);
+    echo "b";
+}
+
 
 // Initialiser la variable 'a' si elle n'existe pas
 if (!isset($_SESSION['b'])) {
@@ -123,9 +131,9 @@ if(isset($_POST['decrement_r'])){
 
 ?>
 
+<h1 id="h1-main">Selon vos recherches : </h1>
 
-<section class="advice-list">
-                <h2>Selon vos recherches : </h2>
+<section class="advice-container">
                 <div class="advice-item">   
                     <?php $indice_1 = calculer_indice_recherche($_SESSION['b'], 0);?>
                     <?php //echo "indice 1 vaut {$indice_1}" ?>            
@@ -141,28 +149,71 @@ if(isset($_POST['decrement_r'])){
                 </div>
                 <div class="advice-item">
 
-                    <?php
-                    $indice_2 = calculer_indice_recherche($_SESSION['b'], 1);
-                    ?>   
+                        <?php
+                        $indice_2 = calculer_indice_recherche($_SESSION['b'], 1);
+                        ?>   
 
-                <h3><?php echo "{$new_tab[$indice_2]['titre']}"; ?></h3>
-                <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
+                    <h3><?php echo "{$new_tab[$indice_2]['titre']}"; ?></h3>
+                    <form method="post" action="conseil_solo.php" target="_blank">
+                            <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_2]['titre']?>">
+                            <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_2]['resume']?>">
+                            <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice_2]['auteur']?>">
+                            <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
+                        </form>
+                    <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
                     
+                </div>
+
+                <div class="advice-item">   
+                    <?php $indice_3 = calculer_indice_recherche($_SESSION['b'], 2);?>
+                    <?php //echo "indice 1 vaut {$indice_1}" ?>            
+                    <h3><?php echo "{$new_tab[$indice_3]['titre']}"; ?></h3>
+                    <form method="post" action="conseil_solo.php" target="_blank">
+                        <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_3]['titre']?>">
+                        <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_3]['resume']?>">
+                        <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice3]['auteur']?>">
+                        <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
+                    </form>
+                    <p><?php echo "{$new_tab[$indice_3]['resume']}"; ?></p>
+                        
+                </div>
+
+                <div class="advice-item">   
+                    <?php $indice_4 = calculer_indice_recherche($_SESSION['b'], 3);?>
+                    <?php //echo "indice 1 vaut {$indice_1}" ?>            
+                    <h3><?php echo "{$new_tab[$indice_4]['titre']}"; ?></h3>
+                    <form method="post" action="conseil_solo.php" target="_blank">
+                        <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_4]['titre']?>">
+                        <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_4]['resume']?>">
+                        <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice_4]['auteur']?>">
+                        <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
+                    </form>
+                    <p><?php echo "{$new_tab[$indice_4]['resume']}"; ?></p>
+                        
                 </div>
                  
 
-                <!-- <h1>Valeur de b : <?php //echo $_SESSION['b']; ?></h1> -->
-
-                <form method="post">
-                    <button type="submit" name="increment_r">Incrémenter</button>
-                </form>
-
-                <form method="post">
-                    <button type="submit" name="decrement_r">Décrémenter</button>
-                </form>
-                <form method="post">
-                    <a href="index.php">RETOUR A L'ACCUEIL</a>
-                </form>
-
-                
 </section>
+
+<h3 class="a-value">Page <?php echo " {$_SESSION['b']} / {$nombre_page}" ; ?></h3>
+
+            
+                <div id="button-down-page">
+                    <form method="post">
+                        <button type="submit" name="decrement_r" class="button_r btn-right" >Page précedente</button>
+                    </form>
+                
+                        <form method="post" >
+                            <button type="submit" name="increment_r" class="button_r btn-left">Page suivante</button>
+                        </form>
+                </div>
+                
+
+                <div class="bouton-retour-div">
+                    <form method="post">
+                        <a href="index.php" class="bouton-retour">Retour à l'accueil</a>
+                    </form>
+                </div>
+
+                    
+                </form>

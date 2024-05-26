@@ -11,7 +11,7 @@
 
 
 <?php if(isset($_SESSION['LOGGED_USER'])) :?>
-            <h1>CyShare : Partager, c'est mieux avec <?php echo $_SESSION['LOGGED_USER_first_name']; ?>!</h1>
+            <h1 class="h1-head">CyShare : Partager, c'est mieux avec <?php echo $_SESSION['LOGGED_USER_first_name']; ?> !</h1>
             <nav>
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
@@ -24,7 +24,7 @@
 <?php endif; ?>
  
 <?php if(!isset($_SESSION['LOGGED_USER'])) :?>
-            <h1>CyShare : Partager, c'est mieux avec vous !</h1>
+            <h1 class="h1-head">CyShare : Partager, c'est mieux avec vous !</h1>
             <nav>
                 <ul>
                     <li><a href="index.php">Accueil</a></li>

@@ -7,6 +7,46 @@ require_once(__DIR__ . '/conseilArray.php');
 //     echo '</pre>';
 // ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/page_conseil.css">
+    <title>Document</title>
+</head>
+<style>
+        /* importation des polices */
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        /* personnalisation de la scroll bar */
+        ::-webkit-scrollbar{
+            width: 5px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track{
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+        }
+
+        ::-webkit-scrollbar-thumb{
+            border-radius: 5px;
+            background-color: grey;
+        }
+
+    </style>
+<body>
+
+ <header>
+    <?php require_once(__DIR__ . '/header.php'); ?>
+ </header>
+    
+</body>
+</html>
+
 <?php
 session_start();
 
@@ -83,27 +123,28 @@ $seconds = $session_duration % 60;
 ?>
 
 
-<section class="advice-list">
-                <h2>les conseils de <?php echo $_SESSION['LOGGED_USER_first_name'] ;?> :  </h2>
-                <h3>Statistique : Vous avez publié <?php echo $nombre_conseil ?> conseils</h3>
-                <h3>vous êtes connecté sur le site depuis : <?php echo "La session est active depuis : {$minutes} minutes et {$seconds} secondes."; ?></h3>
+<section class="advice-list advice-list-manage">
+                <h1 class="conseil-title">Les conseils de <?php echo $_SESSION['LOGGED_USER_first_name'] ;?> :  </h1>
+                <h3 class="stat-number"> <span style="font-size:30px;">Statistique : </span><br> Vous avez publié <span style="color:red;"><?php echo $nombre_conseil ?></span> conseils</h3>
+                <h4 class="stat-time">Vous êtes connecté depuis : <?php echo "La session est active depuis : {$minutes} minutes et {$seconds} secondes."; ?></h4>
                 <div class="advice-item">   
-                    <?php $indice_1 = calculer_indice_recherche($_SESSION['c'], 0);?>
+                    <?php $indice_1 = calculer_indice_manage($_SESSION['c'], 0);?>
                     <?php //echo "indice 1 vaut {$indice_1}" ?>            
                     <h3><?php echo "{$new_tab[$indice_1]['titre']}"; ?></h3>
                     <form method="post" action="modifier_un_conseil.php" target="_blank">
                         <input type="hidden" name="manage1-conseil-titre" value="<?php echo $new_tab[$indice_1]['titre']?>">
                         <input type="hidden" name="manage1-conseil-resume" value="<?php echo $new_tab[$indice_1]['resume']?>">
                         <input type="hidden" name="manage1-conseil-image" value="<?php echo $new_tab[$indice_1]['image']?>">
+                        <p><?php echo "{$new_tab[$indice_1]['resume']}"; ?></p>
                         <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Modifier</button>
                     </form>
-                    <p><?php echo "{$new_tab[$indice_1]['resume']}"; ?></p>
+                    
                         
                 </div>
                 <div class="advice-item">
 
                     <?php
-                    $indice_2 = calculer_indice_recherche($_SESSION['c'], 1);
+                    $indice_2 = calculer_indice_manage($_SESSION['c'], 1);
                     ?>   
 
                 <h3><?php echo "{$new_tab[$indice_2]['titre']}"; ?></h3>
@@ -111,25 +152,39 @@ $seconds = $session_duration % 60;
                         <input type="hidden" name="manage1-conseil-titre" value="<?php echo $new_tab[$indice_2]['titre']?>">
                         <input type="hidden" name="manage1-conseil-resume" value="<?php echo $new_tab[$indice_2]['resume']?>">
                         <input type="hidden" name="manage1-conseil-image" value="<?php echo $new_tab[$indice_2]['image']?>">
+                        <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
                         <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Modifier</button>
                     </form>
-                <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
-                    
                 </div>
                  
 
-                <h1>Valeur de c : <?php echo $_SESSION['c']; ?></h1>
-
-                <form method="post">
-                    <button type="submit" name="increment_r">Incrémenter</button>
-                </form>
-
-                <form method="post">
-                    <button type="submit" name="decrement_r">Décrémenter</button>
-                </form>
-                <form method="post">
-                    <a href="index.php">RETOUR A L'ACCUEIL</a>
-                </form>
-
                 
 </section>
+
+<?php if($nombre_page){
+    echo "aucun conseil";
+} ?>
+
+<h3 class="a-value">Page <?php echo " {$_SESSION['c']} / {$nombre_page}" ; ?></h3>
+
+            
+                <div id="button-down-page">
+                    <form method="post">
+                        <button type="submit" name="decrement_r" class="button_r btn-right" >Page précedente</button>
+                    </form>
+                
+                        <form method="post" >
+                            <button type="submit" name="increment_r" class="button_r btn-left">Page suivante</button>
+                        </form>
+                </div>
+                
+
+                <div class="bouton-retour-div">
+                    <form method="post">
+                        <a href="index.php" class="bouton-retour">Retour à l'accueil</a>
+                    </form>
+                </div>
+
+                    
+                </form>
+

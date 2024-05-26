@@ -55,7 +55,7 @@ while (($line = fgets($file)) !== false) {
 
 
     // Vérifier si les champs correspondent aux valeurs de session              //on verifie si le prenom du logged user est present
-    if ($parts[0] == preg_replace('/\s+/', '', $want_to_modify_title) && ( str_contains($parts[3], preg_replace('/\s+/', '', $_SESSION['LOGGED_USER_first_name']) ) ==true) ) {
+    if ($parts[0] == preg_replace('/\s+/', '', $want_to_modify_title) && (str_contains( strtolower($parts[3]) , strtolower(preg_replace('/\s+/', '', $_SESSION['LOGGED_USER_first_name'])) ) ==true) ) {
         // Modifier la ligne avec les nouvelles valeurs
         $insert_data = "{$new_title}; {$parts[1]}; {$new_resume}; {$parts[3]}; {$new_image}\n";
         // Ajouter la nouvelle ligne modifiée au tableau

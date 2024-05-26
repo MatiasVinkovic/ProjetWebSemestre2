@@ -1,0 +1,101 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+}
+
+/* style.css - Ajout de styles pour le bouton de fichier */
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Couleur bleue */
+    color: #fff; /* Couleur du texte blanc */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+    transform: scale(1.05);
+}
+
+.custom-file-upload:active {
+    transform: scale(1);
+}
+
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+input[type="submit"]:active {
+    transform: scale(1);
+}

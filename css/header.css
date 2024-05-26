@@ -1,44 +1,52 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat';
-}
+/* header.css */
 
 body {
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-/* header position */
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-    width: 100%;
-    margin: 0 auto;
+    margin: 0;
 }
 
-header h1 {
+header {
+    background-color: #333;
+    padding: 20px;
     text-align: center;
 }
 
-header nav ul {
-    display: flex;
-    justify-content: center;
+.h1-head {
+    margin-bottom: 20px;
+    color: #f4f4f4;
+}
+
+nav ul {
     list-style: none;
+    padding: 0;
 }
 
-header nav ul li {
-    margin: 0 1rem;
+nav ul li {
+    display: inline;
 }
 
-header nav ul li a {
-    color: #fff;
+nav ul li a {
     text-decoration: none;
-    font-weight: bold;
+    padding: 10px;
+    color: #fff; /* Couleur blanche par défaut */
+    position: relative; /* Permet de positionner le soulignement par rapport au lien */
+    transition: color 0.3s, border-bottom-width 0.3s; /* Animation du changement de couleur et de la largeur de la bordure */
 }
 
+nav ul li a:hover {
+    color: #007bff; /* Changement de couleur au survol */
+}
 
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5px; /* Distance entre le lien et le soulignement */
+    width: 0; /* Largeur initiale du soulignement */
+    height: 2px; /* Épaisseur du soulignement */
+    background-color: #007bff; /* Couleur du soulignement */
+    transition: width 0.3s; /* Animation pour la largeur du soulignement */
+}
 
-/*  */
+nav ul li a:hover::after {
+    width: 100%; /* Largeur du soulignement au survol */
+}

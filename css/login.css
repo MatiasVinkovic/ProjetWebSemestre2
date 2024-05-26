@@ -6,6 +6,10 @@
     font-family: 'Montserrat';
 }
 
+h1{
+    color:black;
+}
+
 .container1{
     background-color: #fff;
     padding: 20px;
