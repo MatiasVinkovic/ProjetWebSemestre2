@@ -178,19 +178,24 @@ if(isset($_POST['decrement_r'])){
                         
                 </div>
 
-                <div class="advice-item">   
-                    <?php $indice_4 = calculer_indice_recherche($_SESSION['b'], 3);?>
-                    <?php //echo "indice 1 vaut {$indice_1}" ?>            
-                    <h3><?php echo "{$new_tab[$indice_4]['titre']}"; ?></h3>
-                    <form method="post" action="conseil_solo.php" target="_blank">
-                        <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_4]['titre']?>">
-                        <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_4]['resume']?>">
-                        <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice_4]['auteur']?>">
-                        <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
-                    </form>
-                    <p><?php echo "{$new_tab[$indice_4]['resume']}"; ?></p>
-                        
-                </div>
+                <?php
+if ($_SESSION['a'] === $nombre_page && $nombre_conseils % 4 < 1) {
+    $indice_4 = calculer_indice_recherche($_SESSION['b'], 3);
+?>
+    <div class="advice-item">
+        <h3><?php echo "{$new_tab[$indice_4]['titre']}"; ?></h3>
+        <form method="post" action="conseil_solo.php" target="_blank">
+            <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_4]['titre']; ?>">
+            <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_4]['resume']; ?>">
+            <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice_4]['auteur']; ?>">
+            <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
+        </form>
+        <p><?php echo "{$new_tab[$indice_4]['resume']}"; ?></p>
+    </div>
+<?php
+}
+?>
+
                  
 
 </section>

@@ -141,30 +141,31 @@ $seconds = $session_duration % 60;
                     
                         
                 </div>
+                <?php   if(!($_SESSION['c'] === $nombre_page && $nombre_conseil % 2 === 1)){  ?>
                 <div class="advice-item">
 
                     <?php
                     $indice_2 = calculer_indice_manage($_SESSION['c'], 1);
                     ?>   
 
-                <h3><?php echo "{$new_tab[$indice_2]['titre']}"; ?></h3>
-                <form method="post" action="modifier_un_conseil.php" target="_blank">
-                        <input type="hidden" name="manage1-conseil-titre" value="<?php echo $new_tab[$indice_2]['titre']?>">
-                        <input type="hidden" name="manage1-conseil-resume" value="<?php echo $new_tab[$indice_2]['resume']?>">
-                        <input type="hidden" name="manage1-conseil-image" value="<?php echo $new_tab[$indice_2]['image']?>">
+                    <h3><?php echo "{$new_tab[$indice_2]['titre']}"; ?></h3>
+                    <form method="post" action="modifier_un_conseil.php" target="_blank">
+                        <input type="hidden" name="manage1-conseil-titre" value="<?php echo $new_tab[$indice_2]['titre']; ?>">
+                        <input type="hidden" name="manage1-conseil-resume" value="<?php echo $new_tab[$indice_2]['resume']; ?>">
+                        <input type="hidden" name="manage1-conseil-image" value="<?php echo $new_tab[$indice_2]['image']; ?>">
                         <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
                         <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Modifier</button>
                     </form>
+                
+
                 </div>
+                <?php
+                }
+                ?>
                  
 
                 
 </section>
-
-<?php if($nombre_page){
-    echo "aucun conseil";
-} ?>
-
 <h3 class="a-value">Page <?php echo " {$_SESSION['c']} / {$nombre_page}" ; ?></h3>
 
             
