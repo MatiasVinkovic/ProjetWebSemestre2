@@ -60,10 +60,10 @@
         </div>
         <br>
         <!-- Auteur -->
-        <div>
-            <label for="auteur">Auteur:</label>
+        <!-- <div>
+            <label for="auteur">Auteur:</label>                 //finalement on impose le meme nom que l'auteur actuel, pour pas faire d'erreur
             <input type="text" name="new-auteur" required>
-        </div>
+        </div> -->
         <br>
         <!-- Fichier -->
         <div>

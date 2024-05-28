@@ -141,7 +141,7 @@ $seconds = $session_duration % 60;
                     
                         
                 </div>
-                <?php   if(!($_SESSION['c'] === $nombre_page && $nombre_conseil % 2 === 1)){  ?>
+                <?php   if(!($_SESSION['c'] == $nombre_page && $nombre_conseil % 2 == 1)){  ?>
                 <div class="advice-item">
 
                     <?php

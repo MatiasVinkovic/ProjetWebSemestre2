@@ -42,6 +42,7 @@
 <?php
 
 
+
 session_start();
 
 include_once(__DIR__ . '/conseilArray.php');
@@ -53,6 +54,10 @@ $nombre_page = ceil($nombre_conseil / 4);
 
 // Initialiser la variable 'a' si elle n'existe pas
 if (!isset($_SESSION['a'])) {
+    $_SESSION['a'] = 1;
+}
+
+if (isset($_SESSION['a']) && $_SESSION['a'] > $nombre_page) {
     $_SESSION['a'] = 1;
 }
 
@@ -98,27 +103,27 @@ if(isset($_POST['decrement'])){
                     <p><?php echo "{$conseils_array[$indice_1]['resume']}"; ?></p>
                 </div>
                
-                <?php   if(!($_SESSION['a'] === $nombre_page && ($nombre_conseil % 4 === 1 ))){  ?>
-                <div class="advice-item">
-                    <?php
-                    $indice_2 = calculer_indice($_SESSION['a'], 1);
-                    ?>   
-                
-                <h3><?php echo "{$conseils_array[$indice_2]['titre']}"; ?></h3>
-                    <form method="post" action="conseil_solo.php" target="_blank">
-                        <input type="hidden" name="info-tab1-title" value="<?php echo $conseils_array[$indice_2]['titre'];?>">
-                        <input type="hidden" name="info-tab1-resume" value="<?php echo $conseils_array[$indice_2]['resume'];?>">
-                        <input type="hidden" name="info-tab1-auteur" value="<?php echo $conseils_array[$indice_2]['auteur'];?>">
-                        <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_2]['image'];?>">
-                        <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
-                    </form>
-                    <p><?php echo "{$conseils_array[$indice_2]['resume']}"; ?></p>
+                <?php   if(!($_SESSION['a'] == $nombre_page && ($nombre_conseil % 4 == 1 ))){  ?>
+                    <div class="advice-item">
+                        <?php
+                        $indice_2 = calculer_indice($_SESSION['a'], 1);
+                        ?>   
                     
-                    </div>
+                    <h3><?php echo "{$conseils_array[$indice_2]['titre']}"; ?></h3>
+                        <form method="post" action="conseil_solo.php" target="_blank">
+                            <input type="hidden" name="info-tab1-title" value="<?php echo $conseils_array[$indice_2]['titre'];?>">
+                            <input type="hidden" name="info-tab1-resume" value="<?php echo $conseils_array[$indice_2]['resume'];?>">
+                            <input type="hidden" name="info-tab1-auteur" value="<?php echo $conseils_array[$indice_2]['auteur'];?>">
+                            <input type="hidden" name="info-tab1-image" value="<?php echo $conseils_array[$indice_2]['image'];?>">
+                            <button type="submit" value="envoyer" class="bouton-voir-plus">Voir plus</button>
+                        </form>
+                        <p><?php echo "{$conseils_array[$indice_2]['resume']}"; ?></p>
+                        
+                        </div>
                     <?php 
                     }
                     ?>
-                <?php   if(!($_SESSION['a'] === $nombre_page && ($nombre_conseil % 4 === 1 || $nombre_conseil % 4 === 2))){  ?>
+                <?php   if(!($_SESSION['a'] == $nombre_page && ($nombre_conseil % 4 == 1 || $nombre_conseil % 4 == 2))){  ?>
                 <div class="advice-item">
                     <?php
                         $indice_3 = calculer_indice($_SESSION['a'], 2);
@@ -137,7 +142,7 @@ if(isset($_POST['decrement'])){
                     <?php 
                     }
                     ?>
-                    <?php   if(!($_SESSION['a'] === $nombre_page && ($nombre_conseil % 4 === 1 || $nombre_conseil % 4 === 2 || $nombre_conseil % 4 === 3))){  ?>
+                    <?php   if(!($_SESSION['a'] == $nombre_page && ($nombre_conseil % 4 == 1 || $nombre_conseil % 4 == 2 || $nombre_conseil % 4 === 3))){  ?>
                 <div class="advice-item">
                     <?php
                         $indice_4 = calculer_indice($_SESSION['a'], 3);
@@ -181,3 +186,4 @@ if(isset($_POST['decrement'])){
                     
                 </form>
           
+                    

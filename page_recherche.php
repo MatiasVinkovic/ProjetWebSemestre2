@@ -147,6 +147,7 @@ if(isset($_POST['decrement_r'])){
                     <p><?php echo "{$new_tab[$indice_1]['resume']}"; ?></p>
                         
                 </div>
+                <?php   if(!($_SESSION['b'] == $nombre_page && ($nombre_conseil % 4 == 1 ))){  ?>
                 <div class="advice-item">
 
                         <?php
@@ -161,9 +162,12 @@ if(isset($_POST['decrement_r'])){
                             <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
                         </form>
                     <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
+
+                
                     
                 </div>
-
+                <?php } ?>
+                <?php   if(!($_SESSION['b'] == $nombre_page && ($nombre_conseil % 4 == 1 || $nombre_conseil % 4 == 2))){  ?>
                 <div class="advice-item">   
                     <?php $indice_3 = calculer_indice_recherche($_SESSION['b'], 2);?>
                     <?php //echo "indice 1 vaut {$indice_1}" ?>            
@@ -177,12 +181,12 @@ if(isset($_POST['decrement_r'])){
                     <p><?php echo "{$new_tab[$indice_3]['resume']}"; ?></p>
                         
                 </div>
+                <?php } ?>
 
-                <?php
-if ($_SESSION['a'] === $nombre_page && $nombre_conseils % 4 < 1) {
-    $indice_4 = calculer_indice_recherche($_SESSION['b'], 3);
-?>
+                
+                <?php   if(!($_SESSION['b'] == $nombre_page && ($nombre_conseil % 4 == 1 || $nombre_conseil % 4 == 2 || $nombre_conseil % 4 == 3))){  ?>
     <div class="advice-item">
+        <?php $indice_4 = calculer_indice_recherche($_SESSION['b'], 3);?>
         <h3><?php echo "{$new_tab[$indice_4]['titre']}"; ?></h3>
         <form method="post" action="conseil_solo.php" target="_blank">
             <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_4]['titre']; ?>">
@@ -192,9 +196,9 @@ if ($_SESSION['a'] === $nombre_page && $nombre_conseils % 4 < 1) {
         </form>
         <p><?php echo "{$new_tab[$indice_4]['resume']}"; ?></p>
     </div>
-<?php
-}
-?>
+    <?php
+    }
+    ?>
 
                  
 

@@ -1,0 +1,147 @@
+body {
+    font-family: 'Montserrat';
+    background-color: #f5f5f5;
+    margin: 0;
+   
+}
+
+.advice-container {
+    display: flex;
+    justify-content: center;
+}
+
+h1#h1-main{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.advice-item {
+    background-color: #ffffff;
+    font-family: 'Montserrat';
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: calc(25% - 40px);
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.advice-item:hover {
+    transform: translateY(-5px);
+}
+
+.advice-item h3 {
+    
+    font-size: 1.3em;
+    color: #007bff;
+    margin-top: 0;
+}
+
+.advice-item p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5em;
+    margin: 15px 0;
+}
+
+.bouton-voir-plus {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bouton-voir-plus:hover {
+    background-color: #0056b3;
+}
+
+
+#button-down-page{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    
+}
+
+
+.button_r:hover {
+    background-color: #0056b3;
+    transform: scale(0.98);
+    transition: scale(0.98);
+}
+
+.button_r{
+
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding:10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.a-value{
+    text-align: center;
+}
+
+
+.bouton-retour-div{
+    display: flex;
+    justify-content: center;
+}
+
+.bouton-retour {
+    display: inline-block;
+    padding: 10px;
+    background-color: #007bff; /* Couleur bleue */
+    color: #fff; /* Couleur du texte blanc */
+    text-decoration: none;
+    border-radius: 5px;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+    
+    
+
+  }
+  
+  .bouton-retour:hover {
+    background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+    text-decoration: none;
+    transform: scale(0.98);
+    transition: scale(0.98);
+  }
+/* css de la page manage_conseil */
+
+  .conseil-title{
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .stat-number{
+    text-align: center;
+  }
+
+  .stat-time{
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .advice-list-manage{
+    text-align: center;
+  }
+
+
+
+
+

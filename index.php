@@ -1,4 +1,6 @@
-<?php session_start(); ?>   
+<?php session_start();   
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -87,11 +89,7 @@
 
     
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Plateforme de Partage de Conseils. Tous droits réservés à nous et même pas à vous</p>
-        </div>
-    </footer>
+    <?php require_once(__DIR__ . '/footer.php');?>
 
     <img src="" alt="">
     <h1></h1>
