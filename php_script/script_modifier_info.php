@@ -11,10 +11,13 @@ $modified_password = $_POST['modified-password'];
 $filename = 'liste_client.txt';
 $file = fopen($filename,'r+');
 
+//le but de notre algorithme ici, est de stocker dans un tableau toutes les lignes
+// et une fois qu'on tombe sur LA ligne du client concerné, alors on la modifie et on l'injecte
+
 // Initialiser un tableau pour stocker les lignes du fichier
 $lines = [];
 
-// Parcourir les lignes
+// parcours
 while (($line = fgets($file)) !== false) {
     // Supprimer les espaces
     $new_line = preg_replace('/\s+/', '', $line);
@@ -29,13 +32,14 @@ while (($line = fgets($file)) !== false) {
         // Ajouter la nouvelle ligne modifiée au tableau
         $lines[] = $insert_data;
     } else {
-        // Si ce n'est pas la ligne à modifier, conserver la ligne d'origine
+        // si c'est pas la ligne à modifier, conserver la ligne d'origine
         $lines[] = $line;
     }
 }
 
 // Réécrire toutes les lignes dans le fichier
-fseek($file, 0); // Remettre le curseur au début du fichier
+fseek($file, 0); //  curseur au début du fichier
+//du coup on ecrit tout dans le fichier mtn
 foreach ($lines as $line) {
     fwrite($file, $line);
 }

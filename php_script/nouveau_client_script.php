@@ -53,10 +53,60 @@ $_SESSION['LOGGED_USER_mail'] = $client_new_mail;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .paragraphe {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divi-paragraphe {
+            max-width: 500px; /* Limite la largeur de la div */
+            margin: 0 auto; /* Centre la div horizontalement */
+            text-align: center; /* Centre le texte à l'intérieur de la div */
+        }
+
+        /* Style pour le bouton de retour */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 20px 0; /* Espace autour du bouton */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            background-color: #004080;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
-    <a href="../index.php">Retour a l'accueil</a>
+    <a href="../index.php" class="button">Retour à l'accueil</a>
+
+    <div class="divi-paragraphe">
+        <h3>Merci d'avoir créer un compte chez nous !</h3>
+    </div>
     
 </body>
 </html>
