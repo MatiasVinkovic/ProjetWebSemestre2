@@ -10,4 +10,4 @@ SI PHP INSTALLÉ (pour clement et roman une fois que t'auras php)
   mettez vous dans le terminal dans le dossier du site
   et tapez : php -S localhost:8080
 
-  il reste plus que le navigateur, aller a l'adresse : localhost:8080
+  il reste plus que le navigateur, allez a l'adresse : localhost:8080
