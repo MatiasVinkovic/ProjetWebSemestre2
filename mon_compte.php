@@ -27,7 +27,7 @@
     <a href="manage_conseil.php">Mes conseils</a>
 </div>
 
-<?php require_once(__DIR__ . '/footer.php'); ?>
+
 
 </body>
 </html>

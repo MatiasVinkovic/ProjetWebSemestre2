@@ -38,6 +38,10 @@ $conseil_image = "/php_script" . "/" . $tmp;
             border-radius: 5px;
             background-color: grey;
         }
+        
+        
+
+       
 
     </style>
 </head>
@@ -48,10 +52,19 @@ $conseil_image = "/php_script" . "/" . $tmp;
 
     <h1><?php echo $conseil_title ?></h1>
     <p>écrit par <b><?php echo $conseil_auteur ?></b></p>
+
     <h3>Résumé du conseil : </h3>
-    <h3><?php echo $conseil_resume ?></h3>
     
-    <img src="<?php echo $conseil_image ?>" alt="">
+    <div class="container">
+    <div class="divi-paragraphe">
+        <h3 class="paragraphe"><?php echo $conseil_resume ?></h3>
+    </div>
+</div>
+   
+    
+    
+    
+    <img src="<?php echo $conseil_image ?>" alt="" height="3    00" width="400">
 
 
 

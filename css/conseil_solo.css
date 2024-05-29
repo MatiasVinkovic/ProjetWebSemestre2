@@ -56,3 +56,13 @@ img {
 .container img {
     margin-top: 20px;
 }
+
+
+.container {
+    width: 500px; /* Largeur fixe du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+}
+
+.divi-paragraphe {
+    text-align: center;
+}   
