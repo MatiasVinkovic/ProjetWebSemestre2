@@ -142,6 +142,7 @@ if(isset($_POST['decrement_r'])){
                         <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_1]['titre']?>">
                         <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_1]['resume']?>">
                         <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice_1]['auteur']?>">
+                        <input type="hidden" name="info-tab1-image" value="<?php echo $new_tab[$indice_1]['image']?>">
                         <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
                     </form>
                     <p><?php echo "{$new_tab[$indice_1]['resume']}"; ?></p>
@@ -159,6 +160,8 @@ if(isset($_POST['decrement_r'])){
                             <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_2]['titre']?>">
                             <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_2]['resume']?>">
                             <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice_2]['auteur']?>">
+                            <input type="hidden" name="info-tab1-image" value="<?php echo $new_tab[$indice_2]['image']?>">
+
                             <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
                         </form>
                     <p><?php echo "{$new_tab[$indice_2]['resume']}"; ?></p>
@@ -176,6 +179,8 @@ if(isset($_POST['decrement_r'])){
                         <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_3]['titre']?>">
                         <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_3]['resume']?>">
                         <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice3]['auteur']?>">
+                        <input type="hidden" name="info-tab1-image" value="<?php echo $new_tab[$indice_3]['image']?>">
+
                         <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
                     </form>
                     <p><?php echo "{$new_tab[$indice_3]['resume']}"; ?></p>
@@ -192,6 +197,8 @@ if(isset($_POST['decrement_r'])){
             <input type="hidden" name="info-tab1-title" value="<?php echo $new_tab[$indice_4]['titre']; ?>">
             <input type="hidden" name="info-tab1-resume" value="<?php echo $new_tab[$indice_4]['resume']; ?>">
             <input type="hidden" name="info-tab1-auteur" value="<?php echo $new_tab[$indice_4]['auteur']; ?>">
+            <input type="hidden" name="info-tab1-image" value="<?php echo $new_tab[$indice_4]['image']?>">
+
             <button type="submit" value="envoyer" class="bouton-voir-plus" target="_blank">Voir plus</button>
         </form>
         <p><?php echo "{$new_tab[$indice_4]['resume']}"; ?></p>
