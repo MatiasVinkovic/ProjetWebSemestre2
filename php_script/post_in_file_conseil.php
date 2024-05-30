@@ -45,7 +45,7 @@ $lines = file($file);
 echo "Merci d'avoir ecris ce conseil, notre équipe se charge de mettre cela en ligne le plus tot possible !";
 //il nous reste plus qu'a ecrire les informations dans le fichier de conseils
 
-$insert_data = "\n  {$new_titre}; {$new_categorie}; {$new_resume}; {$_SESSION['LOGGED_USER_first_name']} {$_SESSION['LOGGED_USER_last_name']}; {$new_image} \n" ;
+$insert_data = " \n  {$new_titre}; {$new_categorie}; {$new_resume}; {$_SESSION['LOGGED_USER_first_name']} {$_SESSION['LOGGED_USER_last_name']}; {$new_image} \n" ;
 //on insere dans le fichier la nouvelle ligne
 file_put_contents('../liste_conseil.txt', $insert_data, FILE_APPEND | LOCK_EX);
 
